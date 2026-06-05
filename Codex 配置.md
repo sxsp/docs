@@ -2,11 +2,13 @@
 
 ### 1. VScode 下安装插件
 
-在 VScode 中安装 **Codex – OpenAI’s coding agent** 插件
+​	在 VScode 中安装 **Codex – OpenAI’s coding agent** 插件
+
+
 
 ### 2. 修改配置文件
 
-修改 **C:\Users\xxx\\.codex\config.toml** 文件：
+​	修改 **C:\Users\xxx\\.codex\config.toml** 文件：
 
 ```
 disable_response_storage = true
@@ -28,7 +30,7 @@ wire_api = "responses"
 sandbox = "elevated"
 ```
 
-修改 **C:\Users\xxx\\.codex\auth.json** 文件：
+​	修改 **C:\Users\xxx\\.codex\auth.json** 文件：
 
 ```
 {
