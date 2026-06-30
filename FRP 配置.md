@@ -1,6 +1,10 @@
 # FRP 配置
 
+
+
 ### 1. 检查服务器CPU架构
+
+---
 
 ​	执行下列命令检查CPU架构，常见为 **x86_64**，后续教程以 **x86_64** 为例。
 
@@ -11,6 +15,8 @@ uname -m
 
 
 ### 2. 下载 frp
+
+---
 
 ​	执行下列命令，其中VERSION或许需要跟随时代潮流更新。
 
@@ -41,6 +47,8 @@ frp_0.69.1_linux_amd64.tar.gz: OK
 
 
 ### 3. 解压并安装 frps
+
+---
 
 ​	解压：
 
@@ -150,6 +158,8 @@ sudo systemctl restart frps
 
 ### 4. 配置frps开机自启动
 
+---
+
 ​	创建专用账户：
 
 ```bash
@@ -216,6 +226,8 @@ sudo journalctl -u frps -f
 
 ### 5. 开放公网服务器端口
 
+---
+
 ​	在控制台开放两个 **tcp** 端口：7000，用于 **frpc** 连接 **frps**，6000，用于公网访问 **Windows SSH**。
 
 ​	运行 **sudo firewall-cmd --state** 命令发现防火墙开启后，执行以下命令设置端口和验证：
@@ -231,6 +243,8 @@ sudo firewall-cmd --list-ports
 
 
 ### 6. 内网 **Windows** 部署 **frpc**
+
+---
 
 ​	*管理员打开 PowerShell：Win+R 输入 powershell 后按 Ctrl+Shift+Enter*
 
@@ -440,6 +454,8 @@ ssh -p 6000 WINDOWS用户名@PUBLIC_IP
 
 ### 7. 配置 Windows frpc 开机自启动
 
+---
+
 ​	管理员打开 **PowerShell**，创建启动任务：
 
 ```powershell
@@ -492,6 +508,8 @@ Get-Content C:\frp\frpc.log -Tail 50 -Wait # 持续观察日志
 
 ### 8. 访问 frps管理页面
 
+---
+
 ​	在自己的设备上建立 **SSH** 隧道：
 
 ```powershell
@@ -506,6 +524,8 @@ ssh -L 7500:127.0.0.1:7500 服务器用户名@PUBLIC_IP
 
 ### 9. 通过 SSH 安全访问远程桌面
 
+---
+
 ​	在自己的设备上运行：
 
 ```powershell
@@ -516,5 +536,18 @@ ssh -p 6000 -L 13389:127.0.0.1:3389 WINDOWS用户名@PUBLIC_IP
 
 ```powershell
 mstsc /v:127.0.0.1:13389
+```
+
+ 
+
+### 10. 问题记录
+
+---
+
+​	frpc.exe 无法运行，可能是被 Windows Defender 拦截，管理员 PowerShell 执行以下命令将 frpc.exe 隔离
+
+```powershell
+Add-MpPreference -ExclusionPath "C:\frp\frpc.exe"
+(Get-MpPreference).ExclusionPath
 ```
 

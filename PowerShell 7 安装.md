@@ -1,6 +1,10 @@
 # PowerShell 7 安装
 
+
+
 ### 1. 搜索并安装PowerShell 7
+
+---
 
 ​	搜索 **PowerShell 7**
 
@@ -26,6 +30,8 @@ winget install --id Microsoft.PowerShell --source winget
 
 ### 2. 安装终端
 
+---
+
 ​	在下方链接分别下载 **terminal** 和 **Oh my posh**
 
 ```
@@ -36,6 +42,8 @@ https://apps.microsoft.com/detail/xp8k0hkjfrxgck?hl=en-us&gl=US
 
 
 ### 3. 安装字体
+
+---
 
 ​	访问下方链接安装 **Meslo LGM NF** 字体
 
@@ -54,6 +62,8 @@ https://www.nerdfonts.com/font-downloads
 
 
 ### 4. 配置
+
+---
 
 ​	**win+r** 运行 **wt**，打开Teminal的设置：
 

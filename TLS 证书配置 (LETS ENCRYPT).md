@@ -1,10 +1,12 @@
 # TLS 证书配置 (LETS ENCRYPT)
 
+
+
 ### 1. 准备域名及防火墙
 
-​	准备好域名 **example.com**。
-
 ---
+
+​	准备好域名 **example.com**。
 
 ​	在控制台配置下列规则，其中80端口为 **HTTP-01** 验证所需。
 
@@ -42,6 +44,8 @@ systemctl stop nginx
 
 
 ### 2. Docker 安装 Certbot
+
+---
 
 ​	创建目录：
 

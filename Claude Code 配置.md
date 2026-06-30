@@ -1,8 +1,16 @@
 # Claude Code 配置
 
+
+
 ### 0. 安装 Node.js 和 Git
 
+---
+
+
+
 ### 1. 安装 Claude Code
+
+---
 
 ```
 npm install -g @anthropic-ai/claude-code
@@ -18,6 +26,8 @@ claude --version
 
 ### 2. 跳过地区检查
 
+---
+
 ​	在  **C:\Users\xxx\\.claude.json** 中根节点下添加一行：
 
 ```
@@ -27,6 +37,8 @@ claude --version
 
 
 ### 3. 配置第三方 API（以Deepseek为例）
+
+---
 
 ​	添加  **C:\Users\xxx\\.claude\settings.json** 文件：
 
@@ -44,6 +56,8 @@ claude --version
 
 
 ### 4. 接入项目
+
+---
 
 ​	进入项目目录下，运行 ：
 
